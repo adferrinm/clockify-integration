@@ -1,0 +1,35 @@
+github_user: "your_github_username"
+github_token: "ghp_your_personal_access_token"
+
+clockify_api_key: "your_clockify_api_key"
+clockify_workspace_id: "your_clockify_workspace_id"
+clockify_user_id: "your_clockify_user_id"
+
+# IANA timezone name — used to convert workday_start to UTC
+# Examples: "Europe/Madrid", "America/New_York", "UTC"
+timezone: "Europe/Madrid"
+
+# Local time when the first entry of each day starts
+workday_start: "11:00"
+
+repos:
+  - github_repo: "org/repo-name-1"
+    clockify_project: "Clockify Project Name A"
+  - github_repo: "org/repo-name-2"
+    clockify_project: "Clockify Project Name B"
+
+# Total hours assigned to a day that has PR activity
+default_hours: 8.0
+
+# How to split hours when both repos have PRs on the same day:
+#   "equal"  -> default_hours / number_of_active_projects (e.g. 4h + 4h)
+#   "manual" -> hours set to null; fill them in before running push.py
+split_strategy: "equal"
+
+# Which PR date field maps a PR to a calendar day:
+#   "created_at" -> date the PR was opened
+#   "merged_at"  -> date the PR was merged (open PRs are excluded)
+pr_date_field: "created_at"
+
+# Safety limit: max GitHub API pages fetched per repo (100 PRs/page)
+max_pages: 10

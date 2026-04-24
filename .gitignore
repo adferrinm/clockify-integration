@@ -1,0 +1,23 @@
+# === CREDENTIALS — never commit ===
+config.yaml
+
+# === Generated files ===
+clockify_*.yaml
+clockify_sync.db
+.sync_state.json
+
+# === Python ===
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# === IDEs ===
+.vscode/
+.idea/
+*.swp
+*.swo
