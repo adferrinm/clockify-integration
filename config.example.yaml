@@ -31,5 +31,15 @@ split_strategy: "equal"
 #   "merged_at"  -> date the PR was merged (open PRs are excluded)
 pr_date_field: "created_at"
 
-# Safety limit: max GitHub API pages fetched per repo (100 PRs/page)
+# Safety limit: max GitHub API pages fetched per repo (100 items/page)
 max_pages: 10
+
+# Which GitHub activities count as a worked day:
+#   "prs_opened"     -> PRs you authored (default)
+#   "commits"        -> commits you pushed to the repo
+#   "issues_created" -> issues you opened
+#   "prs_reviewed"   -> PRs where you left a review/approval
+# Multiple sources are merged: all active days appear, descriptions list each activity.
+# Note: prs_reviewed uses the GitHub search API (lower rate limit).
+activity_sources:
+  - prs_opened
